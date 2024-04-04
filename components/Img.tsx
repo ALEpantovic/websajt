@@ -1,12 +1,12 @@
 
-import Image from 'next/image';
+import { Image } from 'next/image';
 import React from 'react';
 
 const Img = () => {
   return (
     <div className="relative w-full max-container padding-container  flex flex-col gap-20 md:gap-28">
       <Image
-        src={gog.svg}
+        src="/bgImg.png"
         alt="Going Medieval background"
         layout="responsive"
         width={500} 
