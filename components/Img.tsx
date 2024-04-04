@@ -6,8 +6,8 @@ const Img = () => {
   return (
     <div className="relative w-full max-container padding-container  flex flex-col gap-20 md:gap-28">
       <Image
-        src={bgimg.png}
-        alt={Going Medieval background}
+        src="/bgimg.png"
+        alt="Going Medieval background"
         layout={responsive}
         width={500} 
         height={400}
