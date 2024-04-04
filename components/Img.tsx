@@ -6,7 +6,7 @@ const Img = () => {
   return (
     <div className="relative w-full max-container padding-container  flex flex-col gap-20 md:gap-28">
       <Image
-        src="./public/bgImg.png"
+        src={reddit.svg}
         alt="Going Medieval background"
         layout="responsive"
         width={500} 
