@@ -13,13 +13,13 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-        <div className="flex flex-wrap justify-between items-center">
- 	<ul className="gap-20 flex flex-row xs:hidden sm:hidden items-center md:hidden lg:flex">
-            {NAV_LINKS.map((link) => (
-              <Link href={link.href} key={link.key} className="text-xl regular-16 text-white flexCenter cursor-pointer p-3 transition-all hover:font-bold">
-                <p className='p-5 text-xl border-r-2'>{link.label}</p>
-              </Link>
-            ))}
+        <div className="hidden lg:flex flex-wrap justify-between items-center">
+          <ul className="gap-20 flex flex-row items-center">
+              {NAV_LINKS.map((link) => (
+                <Link href={link.href} key={link.key} className="text-xl regular-16 text-white flexCenter cursor-pointer p-3 transition-all hover:font-bold">
+                  <p className='p-5 text-xl border-r-2'>{link.label}</p>
+                </Link>
+              ))}
           </ul>
         </div>
         <div className="text-center">
