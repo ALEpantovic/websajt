@@ -12,14 +12,14 @@ export default function Contact() {
     <h1 className="text-center text-4xl bold-52 lg:bold-88">Contact</h1>
     <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <p className="text-center">Some random text goes here.</p>
+            <p className="text-center">Pajo pakole kad wt.</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex justify-center">
-              <Button type="button" title="Button 1" icon="/logo_foxy.png" variant="btn_dark_green" />
+              <Button type="button" title="Button 1" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
             </div>
             <div className="flex justify-center">
-              <Button type="button" title="Button 2" icon="/logo_foxy.png" variant="btn_dark_green" />
+              <Button type="button" title="Button 2" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
             </div>
           </div>
         </div>
