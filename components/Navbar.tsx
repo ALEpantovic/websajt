@@ -15,7 +15,7 @@ const Navbar = () => {
     <div>
       <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}`}>
         <Link href="/">
-          <Image src="/GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} />
+          <Image src="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} />
         </Link>
         <ul className={`hidden h-full gap-12 lg:flex ${isMenuOpen ? 'menu-open' : ''}`}>
           {NAV_LINKS.map((link) => (
@@ -30,7 +30,7 @@ const Navbar = () => {
         </ul>
         <div className="lg:flexCenter hidden">
           <Link href="/Game">
-          <Button type="button" title="ORDER HERE!" icon="/logo_foxy.png" variant="btn_dark_green" />
+          <Button type="button" title="ORDER HERE!" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
          </Link>
         </div>
         <button
