@@ -8,7 +8,7 @@ const Img = () => {
       <Image
         src="/bgImg.png"
         alt="Going Medieval background"
-        layout={responsive}
+        layout="responsive"
         width={500} 
         height={400}
         className="rounded-md sm:w-full md:w-full lg:w-full xl:w-1/2"
