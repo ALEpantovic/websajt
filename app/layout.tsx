@@ -44,6 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><meta name="google-site-verification" content="dwCaFjoHJ_tbGZNgd1qd_6NsakhUZL4YBdv3VmwfbKA" /></head>
       <body className={`${roboto.className}`}>
         <div className="flex flex-col min-h-screen">
         <div className="bg-gray-10  sticky top-0 z-30 ">
