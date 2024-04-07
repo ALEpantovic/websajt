@@ -20,7 +20,9 @@ export default function Game() {
         <h1 className="text-center text-4xl font-bold text-gray-900 lg:text-5xl">Game</h1>
         <div className="flex justify-center items-center p-8">
           <div className="flex flex-col items-center">
-            <p className="text-center text-lg text-gray-700 mr-10">Discover the thrill of gaming with our latest releases.</p>
+            <p className="text-center text-lg text-gray-700 mr-10">
+              Discover the thrill of gaming with our latest releases. Going Medieval will be in Early Access for at least a year, allowing us to implement features and determine the end of the Early Access period. Modding will be a significant part of the game, with .json files for gameplay information, Steam Workshop, total conversion mods, and graphical mods available. However, editing these files comes with risks. Additionally, we plan to introduce a relaxed/creative/god mode, allowing players to create custom scenarios and enjoy a peaceful mode without enemy attacks. We also aim to provide access to dev tools for those interested.
+            </p>
           </div>
           <ul className="flex flex-col justify-center space-y-4">
             {MEDIA.map((media) => (
