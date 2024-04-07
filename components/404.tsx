@@ -4,15 +4,15 @@ import React, { useEffect } from 'react';
 const VALID_URLS = ['websajt', 'websajt/Jobs', 'websajt/Contact', 'websajt/Game', 'websajt/Press'];
 
 const RedirectToHomeIfInvalid = () => {
- useEffect(() => {
+  useEffect(() => {
     const currentPath = window.location.pathname;
-    // Check if the current path is not exactly '/websajt'
+    console.log(`Current path: ${currentPath}`);
     if (currentPath !== '/websajt' && !VALID_URLS.includes(currentPath)) {
       window.location.replace('/websajt');
     }
- }, []);
+  }, []);
 
- return null;
+  return null;
 };
 
 export default RedirectToHomeIfInvalid;
