@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {Roboto} from '@next/font/google'
-
+import RedirectToHomeIfInvalid from "@/components/404"
 const roboto = Roboto({
   subsets:['latin'],
   weight:['400','700']
@@ -23,6 +23,19 @@ export const metadata: Metadata = {
   creator: "Aleksandar Pantovic",
   publisher: "Foxy Voxel",
   robots: "index, follow",
+  openGraph: {
+    title: "Going Medieval Game: Home Page",
+    description: "Embark on an epic journey in Going Medieval, a captivating colony simulation game where you build, expand, and defend your medieval kingdom.",
+    url: "https://alepantovic.github.io/websajt/", 
+    type: "website",
+},
+twitter: {
+    card: "summary_large_image",
+    title: "Going Medieval Game: Home Page",
+    description: "Embark on an epic journey in Going Medieval, a captivating colony simulation game where you build, expand, and defend your medieval kingdom.",
+    site: "@going_medieval", 
+    creator: "@going_medieval", 
+},
  };
 export default function RootLayout({
   children,
@@ -32,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className}`}>
+        <RedirectToHomeIfInvalid/>
         <div className="flex flex-col min-h-screen">
           <Navbar/>
           <main className="flex-grow">

@@ -20,7 +20,7 @@ export const PRESS = [
 ];
 export const MEDIA =[
 {link:'https://discord.gg/goingmedieval',image:"discord.svg",key:"Discord link for Going Medieval"},
-{link:'https://store.epicgames.com/en-US/p/going-medieval',image:"epic-games.webp",key:"Epic games link for Going Medieval"},
+{link:'https://store.epicgames.com/en-US/p/going-medieval',image:"/epic-games.webp",key:"Epic games link for Going Medieval"},
 {link:'https://www.gog.com/en/game/going_medieval',image:"gog.svg",key:"GOG link for Going Medieval"},
 {link:'https://www.reddit.com/r/goingmedieval/',image:"reddit.svg",key:"Reddit link for Going Medieval"},
 {link:'https://store.steampowered.com/app/1029780/Going_Medieval/',image:"steam.svg",key:"Steam link for Going Medieval"},
