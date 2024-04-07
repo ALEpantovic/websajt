@@ -6,23 +6,24 @@ import Button from "./Button";
 import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggle = () => {
+ const toggle = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-  return (
+ };
+ return (
     <div>
-      <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}`}>
+      <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}`} itemScope itemType="http://schema.org/SiteNavigationElement">
         <Link href="/">
-          <Image src="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} />
+          <Image src="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} itemProp="logo" />
         </Link>
-        <ul className={`hidden h-full gap-12 lg:flex ${isMenuOpen ? 'menu-open' : ''}`}>
+        <ul className={`hidden h-full gap-12 lg:flex ${isMenuOpen ? 'menu-open' : ''}`} itemProp="name">
           {NAV_LINKS.map((link) => (
             <Link
               href={link.href}
               key={link.key}
               className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+              itemProp="url"
             >
               {link.label}
             </Link>
@@ -30,12 +31,13 @@ const Navbar = () => {
         </ul>
         <div className="lg:flexCenter hidden">
           <Link href="/Game">
-          <Button type="button" title="ORDER HERE!" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
-         </Link>
+            <Button type="button" title="ORDER HERE!" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green"  />
+          </Link>
         </div>
         <button
           onClick={toggle}
           className={`origin-top lg:hidden flex-col justify-center items-center ${isMenuOpen ? 'animate-open-burger' :''}`}
+          itemProp="toggleButton"
         >
           <svg
             className="h-6 w-6"
@@ -54,13 +56,14 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className={`bg-white lg:hidden animate-slide-in-right fixed top-20 right-0  p-4 z-40`}>
-          <ul className="gap-20">
+        <div className={`bg-white lg:hidden animate-slide-in-right fixed top-20 right-0 p-4 z-40`} itemScope itemType="http://schema.org/SiteNavigationElement">
+          <ul className="gap-20" itemProp="name">
             {NAV_LINKS.map((link) => (
               <Link
                 href={link.href}
                 key={link.key}
                 className="regular-16 text-gray-50 flexCenter cursor-pointer p-3 transition-all hover:font-bold"
+                itemProp="url"
               >
                 {link.label}
               </Link>
@@ -69,7 +72,7 @@ const Navbar = () => {
         </div>
       )}
     </div>
-  );
+ );
 };
 
 export default Navbar;

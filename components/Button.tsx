@@ -15,4 +15,4 @@ const Button = ({type,title,icon,variant}:Buttonprops) => {
   )
 }
 
-export default Button
+export default Button;
