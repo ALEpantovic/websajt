@@ -4,13 +4,26 @@ import Link from "next/link";
 import { NAV_LINKS } from "@/constants";
 import Button from "./Button";
 import React, { useState, useEffect } from "react";
-
+const baseWidth = 200;
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  useEffect(() => {
+    if (isMenuOpen) {
+       const timeout = setTimeout(() => {
+         document.querySelectorAll('.nav-link').forEach((link) => {
+           const element = link as HTMLElement;
+           element.style.opacity = '1';
+           element.style.transition = 'opacity 0.5s ease-out';
+         });
+       }, 500);
+   
+       return () => clearTimeout(timeout);
+    }
+   }, [isMenuOpen]);
   return (
     <div>
       <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}`}>
@@ -22,7 +35,7 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={link.key}
-              className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+              className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:text-blue-800"
             >
               {link.label}
             </Link>
@@ -52,22 +65,26 @@ const Navbar = () => {
           </svg>
         </button>
       </nav>
-
       {isMenuOpen && (
-        <div className={`bg-white lg:hidden animate-slide-in-right fixed top-20 right-0  p-4 z-40`}>
-          <ul className="gap-20">
-            {NAV_LINKS.map((link) => (
-              <Link
-                href={link.href}
-                key={link.key}
-                className="regular-16 text-gray-50 flexCenter cursor-pointer p-3 transition-all hover:font-bold"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </ul>
-        </div>
-      )}
+ <div
+    className={`bg-burger-image lg:hidden flex flex-col fixed right-0 bottom-0 top-20 left-0 p-4 z-40 transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+    style={{ backgroundImage: `url('imgBurger.webp')`, backgroundSize: '100% auto', backgroundRepeat: 'no-repeat' }}
+>
+    <ul className="gap-20 space-y-0 z-30">
+      {NAV_LINKS.map((link, index) => (
+        <li key={link.key} className="block animate-slide-in-right opacity-0" style={{ animationDelay: `${index * 0.5}s` }}>
+          <Link
+            href={link.href}
+            className="nav-link w-full sm:w-full md:w-[200px] mb-1 regular-26 xs:regular-32 sm:regular-50 text-white flexCenter cursor-pointer p-3 bg-black hover:text-blue-800 hover:bg-gray-200 bg-opacity-50 shadow-md"
+            onClick={toggle}
+          >
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+ </div>
+)}
     </div>
   );
 };

@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'footer-image': "url('https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/bgImgFooter.png')"
+        'footer-image': "url('/bgImgFooter.png')",
       },
       keyframes: {
         'open-burger': {
@@ -39,8 +39,8 @@ module.exports = {
            '100%': {transform:'scaleY(1)'},
         },
         'slideInRight': {
-           '0%': { transform: 'scaleX(0)' },
-           '100%': { transform: 'scaleX(1)' },
+           '0%': { transform: 'scaleX(0)',opacity: '0'  },
+           '100%': { transform: 'scaleX(1)',opacity: '1'  },
         },
         'slideOutLeft': {
            '0%': { transform: 'scaleX(1)' },
