@@ -22,7 +22,7 @@ export default function Contact() {
 
     <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <p className="text-center">If you have any questions, suggestions, or just want to chat, feel free to reach out!</p>
+            <p className="text-center pr-5">If you have any questions, suggestions, or just want to chat, feel free to reach out!</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex justify-center">
