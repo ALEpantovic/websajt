@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'footer-image': "url('/bgImgFooter.png')",
+        'footer-image': "url('bgImgFooter.png')",
       },
       keyframes: {
         'open-burger': {
