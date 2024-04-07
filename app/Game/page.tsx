@@ -17,7 +17,7 @@ export default function Game() {
         quality={100}
       />
       </div>
-        <h1 className="text-center text-4xl font-bold text-gray-900 lg:text-5xl">Game</h1>
+        <h1 className="hidden text-center text-4xl font-bold text-gray-900 lg:text-5xl">Game</h1>
         <div className="flex justify-center items-center p-8">
           <div className="flex flex-col items-center">
             <p className="text-center text-lg text-gray-700 mr-10">
