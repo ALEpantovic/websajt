@@ -47,7 +47,9 @@ export default function RootLayout({
       <body className={`${roboto.className}`}>
         <RedirectToHomeIfInvalid/>
         <div className="flex flex-col min-h-screen">
-          <Navbar/>
+        <div className="bg-gray-10  sticky top-0 z-30 ">
+            <Navbar/>
+          </div>
           <main className="flex-grow">
             {children}
           </main>
