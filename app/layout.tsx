@@ -45,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className}`}>
-        <RedirectToHomeIfInvalid/>
         <div className="flex flex-col min-h-screen">
         <div className="bg-gray-10  sticky top-0 z-30 ">
             <Navbar/>
