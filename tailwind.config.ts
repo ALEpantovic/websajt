@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'footer-image': "url('bgImgFooter.png')",
+        'footer-image': "url('https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/bgImgFooter.png')",
       },
       keyframes: {
         'open-burger': {
