@@ -4,7 +4,6 @@ import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
- const [visibleFeatures, setVisibleFeatures] = useState<string[]>([]);
  const [animatedFeatures, setAnimatedFeatures] = useState<string[]>([]);
  const ulRef = useRef<HTMLUListElement>(null);
 
@@ -12,10 +11,7 @@ const Hero = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !animatedFeatures.includes(entry.target.id)) {
-          setVisibleFeatures((prevVisible) => [...prevVisible, entry.target.id]);
           setAnimatedFeatures((prevAnimated) => [...prevAnimated, entry.target.id]);
-        } else if (!entry.isIntersecting) {
-          setVisibleFeatures((prevVisible) => prevVisible.filter(id => id !== entry.target.id));
         }
       });
     });
@@ -32,7 +28,7 @@ const Hero = () => {
         });
       };
     }
- }, [animatedFeatures]);
+ }, [animatedFeatures]); // Dependency array now only includes `animatedFeatures`
 
  return (
     <section className="max-container padding-container flex flex-col gap-20 py-16  md:gap-28 lg:py-40 relative" style={{ backgroundImage: `url()` }} itemScope itemType="http://schema.org/WebPage">
@@ -53,41 +49,40 @@ const Hero = () => {
         />
       </div>
       <div className=" gap-4 md:gap-8">  
-      <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">    {FEATURES.map((feature, index) => (
-      <li
- key={feature.id}
- id={feature.id}
- className={`feature flex flex-col w-[100%] md:w-[50%]  items-center pr-4 pt-4 
-    ${visibleFeatures.includes(feature.id) 
-      ? (index % 2 === 0 ? 'animate-slide-in-right mt-40' : 'animate-slide-in-left') : ''} 
-    ${index % 2 === 0 ? '' : ''}`}
-
- itemProp="itemListElement"
- itemScope
- itemType="http://schema.org/CreativeWork"
- style={{ 
-    float: index % 2 === 0 ? 'right' : 'left', 
-    minHeight: index % 2 === 0 ? '750px' : '1000px' 
- }}
->
-        {feature.link && (
-          <Image
-            src={feature.link}
-            alt={feature.text}
-            width={1080}
-            height={680}
-            className="mb-4 mx-auto"
-            itemProp="image"
-          />
-        )}
-        <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
-        <p className="text-2xl border-b-4 p-4 text-gray-700 mb-5" itemProp="description">
-          {feature.text}
-        </p>
-      </li>
-    ))}
-  </ul>
-</div>
+        <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
+          {FEATURES.map((feature, index) => (
+            <li
+              key={feature.id}
+              id={feature.id}
+              className={`feature flex flex-col w-[100%] md:w-[50%] items-center pr-4 pt-4 
+                ${animatedFeatures.includes(feature.id) 
+                 ? (index % 2 === 0 ? 'animate-slide-right mt-[200px]' : 'animate-slide-in-left') : ''} `}
+              itemProp="itemListElement"
+              itemScope
+              itemType="http://schema.org/CreativeWork"
+              style={{ 
+                float: index % 2 === 0 ? 'right' : 'left', 
+                height: index % 2 === 0 ? '' : '1200px' 
+              }}
+            >
+              {feature.link && (
+                <Image
+                 src={feature.link}
+                 alt={feature.text}
+                 width={1080}
+                 height={680}
+                 className="mb-4 mx-auto"
+                 itemProp="image"
+                />
+              )}
+              <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
+              <p className="text-2xl border-b-4 p-4 text-gray-700 mb-5" itemProp="description">
+                {feature.text}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
  );
 };

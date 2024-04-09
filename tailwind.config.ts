@@ -50,6 +50,10 @@ module.exports = {
            '0%': { transform: 'translateX(-100%)' },
            '100%': { transform: 'translateX(0)' },
         }, 
+        'slideRight': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+       }, 
           'slideUp': {
           '0%': { transform: 'translateY(200%)' },
           '100%': { transform: 'translateY(0)' },
@@ -64,6 +68,7 @@ module.exports = {
         'slide-in-right': 'slideInRight 0.5s ease-in-out forwards',
         'slide-out-left': 'slideOutLeft 0.5s ease-in-out forwards',
         'slide-in-left': 'slideInLeft 1s ease-in-out forwards',
+        'slide-right': 'slideRight 1s ease-in-out forwards',
         'slide-Up': 'slideUp 1s ease-in-out forwards',
         'pop-In': 'popin 1s ease-in-out forwards',
       },
