@@ -35,7 +35,7 @@ const Hero = () => {
  }, [animatedFeatures]);
 
  return (
-    <section className="max-container padding-container flex flex-col gap-20 py-16 pb-80 md:gap-28 lg:py-40 relative" itemScope itemType="http://schema.org/WebPage">
+    <section className="max-container padding-container flex flex-col gap-20 py-16  md:gap-28 lg:py-40 relative" style={{ backgroundImage: `url()` }} itemScope itemType="http://schema.org/WebPage">
       <div>
         <h1 className="text-center z-10 text-4xl bold-52 lg:bold-88" itemProp="headline">GOING MEDIEVAL</h1>
         <p className='text-xl mt-6 text-gray-50 xl-max-w-[520px]' itemProp="description">Stake your claim in this colony building sim and survive a turbulent Medieval age. Construct a multi-storey fortress in a land reclaimed by wilderness, defend against raids, and keep your villagers happy as their lives are shaped by the world.</p>
@@ -52,26 +52,42 @@ const Hero = () => {
           itemProp="video"
         />
       </div>
-      <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
-        {FEATURES.map((feature) => (
-          <li key={feature.id} id={feature.id} className={`feature flex flex-col items-center pt-4 ${visibleFeatures.includes(feature.id) ? 'animate-slide-in-left' : ''}`} itemProp="itemListElement" itemScope itemType="http://schema.org/CreativeWork">
-            {feature.link && (
-              <Image
-                src={feature.link}
-                alt={feature.text}
-                width={1080}
-                height={680}
-                className="mb-4 mx-auto"
-                itemProp="image"
-              />
-            )}
-            <h2 className='mt-10 mb-5 text-3xl bold-30 lg:bold-52' itemProp="name">{feature.label}</h2>
-            <p className="text-2xl border-b-4 p-4 text-gray-700 mb-5" itemProp="description">
-              {feature.text}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className=" gap-4 md:gap-8">  
+      <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">    {FEATURES.map((feature, index) => (
+      <li
+ key={feature.id}
+ id={feature.id}
+ className={`feature flex flex-col w-[100%] md:w-[50%]  items-center pr-4 pt-4 
+    ${visibleFeatures.includes(feature.id) 
+      ? (index % 2 === 0 ? 'animate-slide-in-right mt-40' : 'animate-slide-in-left') : ''} 
+    ${index % 2 === 0 ? '' : ''}`}
+
+ itemProp="itemListElement"
+ itemScope
+ itemType="http://schema.org/CreativeWork"
+ style={{ 
+    float: index % 2 === 0 ? 'right' : 'left', 
+    minHeight: index % 2 === 0 ? '750px' : '1000px' 
+ }}
+>
+        {feature.link && (
+          <Image
+            src={feature.link}
+            alt={feature.text}
+            width={1080}
+            height={680}
+            className="mb-4 mx-auto"
+            itemProp="image"
+          />
+        )}
+        <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
+        <p className="text-2xl border-b-4 p-4 text-gray-700 mb-5" itemProp="description">
+          {feature.text}
+        </p>
+      </li>
+    ))}
+  </ul>
+</div>
     </section>
  );
 };
