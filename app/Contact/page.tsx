@@ -10,7 +10,7 @@ export default function Contact() {
     <section className="max-container padding-container flex flex-col gap-10 py-16 pb-80 md:gap-10 lg:py-20 relative">
       <div className="w-500 h-300 flex justify-center items-center animate-pop-In">
         <Image
-        src="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/social-media.png"
+        src="social-media.png"
         alt="Going Medieval Social"
         layout="relative"
         width={1000}
@@ -22,7 +22,7 @@ export default function Contact() {
 
     <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <p className="text-center">If you have any questions, suggestions, or just want to chat, feel free to reach out!</p>
+            <p className="text-center pr-5">If you have any questions, suggestions, or just want to chat, feel free to reach out!</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex justify-center">
