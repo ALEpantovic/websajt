@@ -51,13 +51,13 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" />
+        <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" style={{backgroundSize: '100% auto'}}/>
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
             <li
               key={feature.id}
               id={feature.id}
-              className={`feature flex flex-col w-[100%] md:w-[50%] items-center pr-4 pt-4 
+              className={`feature flex flex-col w-[100%] md:w-[50%] items-center pl-4 pr-4 pt-4 
                 ${animatedFeatures.includes(feature.id) 
                  ? (index % 2 === 0 ? 'animate-slide-right mt-[200px]' : 'animate-slide-in-left') : ''} `}
               itemProp="itemListElement"
