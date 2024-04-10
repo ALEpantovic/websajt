@@ -35,15 +35,15 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={link.key}
-              className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:text-blue-800"
+              className="text-2xl text-gray-800 flexCenter cursor-pointer pb-1.5 transition-all hover:text-blue-900 hover:border-b-4 border-blue-900"
             >
               {link.label}
             </Link>
           ))}
         </ul>
         <div className="lg:flexCenter hidden">
-          <Link href="/Game">
-          <Button type="button" title="Get the game!" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
+          <Link  href="/Game">
+          <Button type="button"  title="Get the game!" icon="https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/logo_foxy.png" variant="btn_dark_green" />
          </Link>
         </div>
         <button

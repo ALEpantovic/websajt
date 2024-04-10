@@ -1,4 +1,5 @@
 'use client'
+
 import { FEATURES } from '@/constants';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
@@ -28,10 +29,10 @@ const Hero = () => {
         });
       };
     }
- }, [animatedFeatures]); // Dependency array now only includes `animatedFeatures`
+ }, [animatedFeatures]);
 
  return (
-    <section className="max-container padding-container flex flex-col gap-20 py-16  md:gap-28 lg:py-40 relative" style={{ backgroundImage: `url()` }} itemScope itemType="http://schema.org/WebPage">
+    <section className="max-container padding-container flex flex-col gap-20 py-16 md:gap-28 lg:py-40 relative" itemScope itemType="http://schema.org/WebPage">
       <div>
         <h1 className="text-center z-10 text-4xl bold-52 lg:bold-88" itemProp="headline">GOING MEDIEVAL</h1>
         <p className='text-xl mt-6 text-gray-50 xl-max-w-[520px]' itemProp="description">Stake your claim in this colony building sim and survive a turbulent Medieval age. Construct a multi-storey fortress in a land reclaimed by wilderness, defend against raids, and keep your villagers happy as their lives are shaped by the world.</p>
@@ -48,7 +49,9 @@ const Hero = () => {
           itemProp="video"
         />
       </div>
-      <div className=" gap-4 md:gap-8">  
+
+      <div className="relative z-10">
+        <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" />
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
             <li
@@ -76,7 +79,7 @@ const Hero = () => {
                 />
               )}
               <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
-              <p className="text-2xl border-b-4 p-4 text-gray-700 mb-5" itemProp="description">
+              <p className="text-3xl border-b-4 p-4 text-sky-950 mb-5" itemProp="description">
                 {feature.text}
               </p>
             </li>

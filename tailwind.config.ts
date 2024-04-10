@@ -30,6 +30,7 @@ module.exports = {
         },
       },
       backgroundImage: {
+        'hero-img':"url('bgImgHero.png')",
         'footer-image': "url('https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/bgImgFooter.png')",
       },
       keyframes: {
