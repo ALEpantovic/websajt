@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'hero-img':"url('bgImgHero.png')",
+        'hero-img':"url('https://scontent.fbeg2-1.fna.fbcdn.net/v/t1.15752-9/435443059_722512416567800_1339919046359737326_n.png?stp=dst-png_s2048x2048&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFJTjuHDmFKY9BEpAE_FpO-2CCBpSmKLjvYIIGlKYouO0Zr3KjQyb1cFtHl-Oq_OK8gH9UvVE3QDmGHgZ9co4G-&_nc_ohc=AKWEU8vueMIAb4rjuQW&_nc_ht=scontent.fbeg2-1.fna&oh=03_AdXofI4wxPkhOient0t-2j8Bc2S2q2UVxqQaQann4BCaMQ&oe=663E0AE5')",
         'footer-image': "url('https://raw.githubusercontent.com/ALEpantovic/websajt/master/public/bgImgFooter.png')",
       },
       keyframes: {
