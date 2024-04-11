@@ -86,7 +86,7 @@ const Hero = () => {
               </div>
             )}
             {!isEvenIndex(index)&&(
-              <div className="w-[50%]"><li
+              <div className="w-[50%]" style={{float:'right'}}><li
               key={feature.id}
               id={feature.id}
               className={`feature flex flex-col w-[100%] items-center pr-4 pt-4
