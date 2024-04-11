@@ -86,11 +86,8 @@ const Hero = () => {
               </div>
             )}
             {!isEvenIndex(index)&&(
-              <div className="w-[100%] md:w-[50%]" style={{float:'right'}}><li
-              key={feature.id}
-              id={feature.id}
-              className={`feature flex flex-col w-[100%] items-center pr-4 pt-4 mt-30
-              ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-right' : '' } `}
+              <div className="w-[100%] md:w-[50%]" style={{float:'right'}}>
+              <li key={feature.id} id={feature.id} className={`feature flex flex-col w-[100%] items-center mt-50 pr-4 pt-4 ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-right' : '' } `}
               itemProp="itemListElement"
               itemScope
               itemType="http://schema.org/CreativeWork"
