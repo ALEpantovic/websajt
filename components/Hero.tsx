@@ -56,7 +56,7 @@ const Hero = () => {
           {FEATURES.map((feature, index) => (
             <>
             {isEvenIndex(index)&&(
-              <div className="w-[100%] md-[50%]">
+              <div className="w-[100%] md:w-[50%]">
                 <li
               key={feature.id}
               id={feature.id}
@@ -86,7 +86,7 @@ const Hero = () => {
               </div>
             )}
             {!isEvenIndex(index)&&(
-              <div className="w-[100%] md-[50%]" style={{float:'right'}}><li
+              <div className="w-[100%] md:w-[50%]" style={{float:'right'}}><li
               key={feature.id}
               id={feature.id}
               className={`feature flex flex-col w-[100%] items-center pr-4 pt-4
