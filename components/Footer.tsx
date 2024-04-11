@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 const Footer = () => {
  return (
-    <footer itemProp="footer" className="bg-footer-image bg-cover bg-center py-8 px-4 sm:px-6 lg:px-8 mt-auto">
+    <footer itemProp="footer" className="py-8 px-4 sm:px-6 lg:px-8 mt-auto"
+         style={{ backgroundImage: `url('bgImgFooter.png')`, backgroundSize: '100% auto', backgroundRepeat: 'no-repeat' }}>
       <div className="container mx-auto space-y-4" itemProp="potentialAction" itemType="http://schema.org/Organization">
         <div className="flex justify-center space-x-10">
           {MEDIA.map((media) => (
