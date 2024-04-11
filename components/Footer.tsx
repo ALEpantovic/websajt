@@ -14,14 +14,16 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-<div className="hidden lg:flex flex-wrap justify-between items-center">
- <ul className="gap-20 flex flex-row items-center">
-      {NAV_LINKS.map((link) => (
-        <Link href={link.href} key={link.key} className="text-xl regular-16 text-white flexCenter cursor-pointer p-1 transition-all hover:text-blue-800 hover:bg-gray-10 rounded-md">
-          <p itemProp="Nav Link" className='p-5 text-xl border-r-2'>{link.label}</p>
-        </Link>
-      ))}
- </ul>
+<div className="hidden lg:flex flex-wrap justify-between">
+<ul className="gap-20 flex flex-row w-full">
+ {NAV_LINKS.map((link) => (
+    <li className='flex-grow flex justify-center items-center'>
+      <Link href={link.href} key={link.key} className="text-xl regular-16 text-white flexCenter cursor-pointer p-1 transition-all hover:text-blue-800 hover:bg-gray-10 rounded-md">
+        <p itemProp="Nav Link" className='p-5 text-2xl border-r-2'>{link.label}</p>
+      </Link>
+    </li>
+  ))}
+</ul>
 </div>
         <div className="text-center">
           <p itemProp="copyrightHolder" className="text-base text-white font-light">
