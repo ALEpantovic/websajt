@@ -51,7 +51,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" />
+        <div className="absolute inset-0 opacity-50 z-[-1] bg-no-repeat"  style={{ backgroundImage: `url('bgImgFooter.png')`, backgroundSize: 'auto 100% '}}/>
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
             <li
