@@ -30,8 +30,6 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'hero-img':"url('KeyArt.jpg')",
-        'footer-image': "url('bgImgFooter.png')",
       },
       keyframes: {
         'open-burger': {
