@@ -43,7 +43,7 @@ const Navbar = () => {
         </ul>
         <div className="lg:flexCenter hidden">
           <Link  href="/Game">
-          <Button type="button"  title="Get the game!" icon="/logo_foxy.png" variant="btn_dark_green" />
+          <Button type="button"  title="Get the game!" icon="logo_foxy.png" variant="btn_dark_green" />
          </Link>
         </div>
         <button
