@@ -66,7 +66,9 @@ const Hero = () => {
               itemScope
               itemType="http://schema.org/CreativeWork"
               style={{ 
-                float:  'left', }}
+               float: 'left',
+               marginTop: '30rem',
+              }}
             >
               {feature.link && (
                 <Image
@@ -91,8 +93,9 @@ const Hero = () => {
               itemProp="itemListElement"
               itemScope
               itemType="http://schema.org/CreativeWork"
-              style={{ 
-                float:'right'
+               style={{ 
+               float: 'right',
+               marginTop: '30rem',
               }}
             >
               {feature.link && (
