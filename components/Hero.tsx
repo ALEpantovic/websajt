@@ -6,8 +6,8 @@ import React, { useState, useEffect, useRef } from 'react';
 const Hero = () => {
  const [animatedFeatures, setAnimatedFeatures] = useState<string[]>([]);
  const ulRef = useRef<HTMLUListElement>(null);
- const isEvenIndex = (index:number) => index % 2 === 0;
- const Index1 = (index:number) => index === 1;
+ const isEvenIndex = (index: number) => index % 2 === 0;
+ const excludedFeatureId = '1';
  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -68,7 +68,7 @@ const Hero = () => {
               itemType="http://schema.org/CreativeWork"
               style={{
               float: 'left',
-              marginTop: Index1({feature.id}) && isEvenIndex({feature.id}) ? '0' : '30rem',
+              marginTop: feature.id === excludedFeatureId ? '0' : '30rem',
               }}
             >
               {feature.link && (
