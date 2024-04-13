@@ -67,7 +67,7 @@ const Hero = () => {
               itemType="http://schema.org/CreativeWork"
               style={{
                 float: 'left',
-                marginTop: index!=1 ? '30rem' : '0',
+                marginTop: index===1 ? '0rem' : '30rem',
               }}
             >
               {feature.link && (
