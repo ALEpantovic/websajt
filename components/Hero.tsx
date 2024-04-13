@@ -68,7 +68,7 @@ const Hero = () => {
               itemType="http://schema.org/CreativeWork"
               style={{
               float: 'left',
-              marginTop: Index1(index) ? '0' : '30rem',
+              marginTop: Index1(index) && isEvenIndex(index) ? '0' : '30rem',
               }}
             >
               {feature.link && (
