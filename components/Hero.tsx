@@ -7,6 +7,7 @@ const Hero = () => {
  const [animatedFeatures, setAnimatedFeatures] = useState<string[]>([]);
  const ulRef = useRef<HTMLUListElement>(null);
  const isEvenIndex = (index:number) => index % 2 === 0;
+ const Index1 = (index:number) => index === 1;
  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -60,14 +61,14 @@ const Hero = () => {
                 <li
               key={feature.id}
               id={feature.id}
-              className={`feature flex flex-col w-[100%] items-center pr-4 pt-30
+              className={`feature flex flex-col w-[100%] items-center pr-4 pt-4
                 ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-in-left' : '' } `}
               itemProp="itemListElement"
               itemScope
               itemType="http://schema.org/CreativeWork"
               style={{
               float: 'left',
-              marginTop: index !== 1 ? '30rem' : '0rem',
+              marginTop: Index1(index) ? '0' : '30rem',
               }}
             >
               {feature.link && (
@@ -89,7 +90,7 @@ const Hero = () => {
             )}
             {!isEvenIndex(index)&&(
               <div className="w-[100%] md:w-[50%]" style={{float:'right'}}>
-              <li key={feature.id} id={feature.id} className={`feature flex flex-col w-[100%] items-center  pr-4 pt-50 ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-right' : '' } `}
+              <li key={feature.id} id={feature.id} className={`feature flex flex-col w-[100%] items-center  pr-4 pt-4 ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-right' : '' } `}
               itemProp="itemListElement"
               itemScope
               itemType="http://schema.org/CreativeWork"
