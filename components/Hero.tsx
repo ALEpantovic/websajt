@@ -51,72 +51,67 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10">
+     <div className="relative z-10">
         <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" />
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
             <>
-            {isEvenIndex(index)&&(
-              <div className="w-[100%] md:w-[50%]">
-                <li
-              key={feature.id}
-              id={feature.id}
-              className={`feature flex flex-col w-[100%] items-center pr-4 pt-4
-                ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-in-left' : '' } `}
-              itemProp="itemListElement"
-              itemScope
-              itemType="http://schema.org/CreativeWork"
-              style={{
-              float: 'left',
-              marginTop: feature.id === excludedFeatureId ? '0' : '30rem',
-              }}
-            >
-              {feature.link && (
-                <Image
-                 src={feature.link}
-                 alt={feature.text}
-                 width={1080}
-                 height={680}
-                 className="mb-4 mx-auto"
-                 itemProp="image"
-                />
+              {isEvenIndex(index) && (
+                <div className="w-[100%] md:w-[50%]">
+                 <li
+                    key={feature.id}
+                    id={feature.id}
+                    className={`feature flex flex-col w-[100%] items-center pr-4 pt-4 ${animatedFeatures.includes(feature.id) ? 'animate-slide-in-left' : ''} ${feature.id === excludedFeatureId ? '' : 'md:mt-[30rem]'}`}
+                    itemProp="itemListElement"
+                    itemScope
+                    itemType="http://schema.org/CreativeWork"
+                 >
+                    {feature.link && (
+                      <Image
+                        src={feature.link}
+                        alt={feature.text}
+                        width={1080}
+                        height={680}
+                        className="mb-4 mx-auto"
+                        itemProp="image"
+                      />
+                    )}
+                    <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
+                    <p className="text-3xl border-b-4 p-4 text-sky-950 mb-5" itemProp="description">
+                      {feature.text}
+                    </p>
+                 </li>
+                </div>
               )}
-              <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
-              <p className="text-3xl border-b-4 p-4 text-sky-950 mb-5" itemProp="description">
-                {feature.text}
-              </p>
-            </li>
-              </div>
-            )}
-            {!isEvenIndex(index)&&(
-              <div className="w-[100%] md:w-[50%]" style={{float:'right'}}>
-              <li key={feature.id} id={feature.id} className={`feature flex flex-col w-[100%] items-center  pr-4 pt-4 ${ animatedFeatures.includes(feature.id)  ? 'animate-slide-right' : '' } `}
-              itemProp="itemListElement"
-              itemScope
-              itemType="http://schema.org/CreativeWork"
-               style={{ 
-               float: 'right',
-               marginTop: '30rem',
-              }}
-            >
-              {feature.link && (
-                <Image
-                 src={feature.link}
-                 alt={feature.text}
-                 width={1080}
-                 height={680}
-                 className="mb-4 mx-auto"
-                 itemProp="image"
-                />
+              {!isEvenIndex(index) && (
+                <div className="w-[100%] md:w-[50%]" style={{ float: 'right' }}>
+                 <li
+                    key={feature.id}
+                    id={feature.id}
+                    className={`feature flex flex-col w-[100%] items-center pr-4 pt-4 ${animatedFeatures.includes(feature.id) ? 'animate-slide-right' : ''} md:mt-[30rem]`}
+                    itemProp="itemListElement"
+                    itemScope
+                    itemType="http://schema.org/CreativeWork"
+                 >
+                    {feature.link && (
+                      <Image
+                        src={feature.link}
+                        alt={feature.text}
+                        width={1080}
+                        height={680}
+                        className="mb-4 mx-auto"
+                        itemProp="image"
+                      />
+                    )}
+                    <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
+                    <p className="text-3xl border-b-4 p-4 text-sky-950 mb-5" itemProp="description">
+                      {feature.text}
+                    </p>
+                 </li>
+                </div>
               )}
-              <h2 className="mt-10 mb-5 text-3xl bold-30 lg:bold-52" itemProp="name">{feature.label}</h2>
-              <p className="text-3xl border-b-4 p-4 text-sky-950 mb-5" itemProp="description">
-                {feature.text}
-              </p>
-            </li>
-              </div>
-            )}
-         </> ))}
+            </>
+          ))}
         </ul>
       </div>
     </section>
