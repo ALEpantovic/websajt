@@ -56,8 +56,9 @@ const Hero = () => {
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
             <>
+             <div className="w-[100%] md:w-[50%]">
               {isEvenIndex(index) && (
-                <div className="w-[100%] md:w-[50%]">
+               
                  <li
                     key={feature.id}
                     id={feature.id}
@@ -83,8 +84,9 @@ const Hero = () => {
                  </li>
                 </div>
               )}
+              <div className="w-[100%] md:w-[50%]" style={{ float: 'right' }}>
               {!isEvenIndex(index) && (
-                <div className="w-[100%] md:w-[50%]" style={{ float: 'right' }}>
+                
                  <li
                     key={feature.id}
                     id={feature.id}
