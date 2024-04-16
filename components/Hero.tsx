@@ -82,8 +82,8 @@ const Hero = () => {
                       {feature.text}
                     </p>
                  </li>
-                </div>
-              )}
+                
+              )}</div>
               <div className="w-[100%] md:w-[50%]" style={{ float: 'right' }}>
               {!isEvenIndex(index) && (
                 
@@ -110,8 +110,8 @@ const Hero = () => {
                       {feature.text}
                     </p>
                  </li>
-                </div>
-              )}
+               
+              )} </div>
             </>
           ))}
         </ul>
