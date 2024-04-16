@@ -61,7 +61,7 @@ const Hero = () => {
                  <li
                     key={feature.id}
                     id={feature.id}
-                    className={`feature flex flex-col w-[100%] items-center pr-4 pt-4 ${animatedFeatures.includes(feature.id) ? 'animate-slide-in-left' : ''} ${feature.id === excludedFeatureId ? '' : 'md:mt-[30rem]'}`}
+                    className={`feature flex flex-col w-[100%] items-center pr-4 pt-4 ${animatedFeatures.includes(feature.id) ? 'animate-slide-in-left' : ''} ${feature.id === excludedFeatureId ? 'md:mb-[30rem]' : 'md:mt-[30rem]'}`}
                     itemProp="itemListElement"
                     itemScope
                     itemType="http://schema.org/CreativeWork"
