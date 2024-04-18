@@ -46,12 +46,12 @@ export default function RootLayout({
     <html lang="en">
       <head><meta name="google-site-verification" content="dwCaFjoHJ_tbGZNgd1qd_6NsakhUZL4YBdv3VmwfbKA" /></head>
       <RedirectToHomeIfInvalid/>
-      <body className={`${roboto.className}`}>
+      <body className={`${roboto.className}` }>
         <div className="flex flex-col min-h-screen">
-        <div className="bg-gray-10  sticky top-0 z-30 ">
+        <div className="  sticky top-0 z-30 "  style={{ backgroundColor: '#CDE7E9' }}>
             <Navbar/>
           </div>
-          <main className="flex-grow">
+          <main className="flex-grow" style={{ backgroundColor: '#EFE4F1' }}>
             {children}
           </main>
           <Footer/>
