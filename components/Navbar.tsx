@@ -26,9 +26,9 @@ const Navbar = () => {
    }, [isMenuOpen]);
   return (
     <div>
-      <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}`}>
+      <nav className={`flexBetween max-container padding-container relative z-30 py-5 ${isMenuOpen ? 'menu-open' : ''}` }>
         <Link href="/">
-          <Image src="GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} />
+          <Image src="/GM_logo_black.png" alt="logo" className="x-0 y-0" width={100} height={50} />
         </Link>
         <ul className={`hidden h-full gap-12 lg:flex ${isMenuOpen ? 'menu-open' : ''}`}>
           {NAV_LINKS.map((link) => (

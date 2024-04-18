@@ -1,5 +1,4 @@
 'use client'
-
 import { FEATURES } from '@/constants';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
@@ -7,7 +6,8 @@ import React, { useState, useEffect, useRef } from 'react';
 const Hero = () => {
  const [animatedFeatures, setAnimatedFeatures] = useState<string[]>([]);
  const ulRef = useRef<HTMLUListElement>(null);
- const isEvenIndex = (index:number) => index % 2 === 0;
+ const isEvenIndex = (index: number) => index % 2 === 0;
+ const excludedFeatureId = '1';
  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -51,7 +51,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10">
+     <div className="relative z-10 flex flex-wrap">
         <div className="absolute inset-0 bg-hero-img opacity-50 z-[-1] bg-no-repeat" />
         <ul ref={ulRef} itemProp="mainEntity" itemScope itemType="http://schema.org/ItemList">
           {FEATURES.map((feature, index) => (
