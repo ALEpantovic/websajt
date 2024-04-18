@@ -9,7 +9,7 @@ export default function Game() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-80 flex flex-col gap-10 md:gap-10 lg:py-20 relativeshadow-lg">
         <div className="w-500 h-300 flex justify-center items-center animate-pop-In">
           <Image
-            src="/roadmap.png"
+            src="roadmap.png"
             alt="Going Medieval roadmap"
             layout="relative"
             width={1000}
